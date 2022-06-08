@@ -57,7 +57,7 @@
   });
 
   // @ts-ignore
-  const socket = io("http://localhost:3030");
+  const socket = io("http://superchat.netstalking.space:3030");
   socket.on("hello", (opts) => {
     myColor = opts.color;
   });
