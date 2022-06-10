@@ -56,30 +56,30 @@
     container.scrollTo(0, container.scrollHeight);
   });
 
-  const URL = import.meta.env.DEV ? 'http://localhost:3030/' : '/'
+  const URL = import.meta.env.DEV ? "http://localhost:3030/" : "/";
   const socket = io(URL);
   socket.on("hello", (opts) => {
     myColor = opts.color;
   });
-  socket.on('typing', (msg) => {
+  socket.on("typing", (msg) => {
     let found = false;
     for (const omsg of messages) {
-      if(msg.id == omsg.id) {
+      if (msg.id == omsg.id) {
         omsg.text = msg.text;
         found = true;
         break;
       }
     }
-    if(!found) {
-      messages.push(msg)
+    if (!found) {
+      messages.push(msg);
     }
     messages = messages;
-  })
+  });
 
   function change(e) {
-    socket.emit('change', e.target.value);
-    if(e.target.value.endsWith('\n')) {
-      e.target.value = '';
+    socket.emit("change", e.target.value);
+    if (e.target.value.endsWith("\n")) {
+      e.target.value = "";
     }
   }
 </script>
@@ -183,6 +183,26 @@
   }
 
   :global(body.darkmode) {
-    background-color: #2F3538;
+    background-color: #2f3538;
+  }
+
+  :global(body.darkmode) textarea {
+    background-color: #2f3538;
+  }
+
+  .container::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 100px;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-color: #414042;
   }
 </style>

@@ -46,3 +46,5 @@ If you have state that's important to retain within a component, consider creati
 import { writable } from 'svelte/store'
 export default writable(0)
 ```
+
+<a href="https://www.flaticon.com/free-icons/thunder" title="thunder icons">Thunder icons created by Pixel perfect - Flaticon</a>
