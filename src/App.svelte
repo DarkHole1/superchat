@@ -56,8 +56,8 @@
     container.scrollTo(0, container.scrollHeight);
   });
 
-  // @ts-ignore
-  const socket = io("http://superchat.netstalking.space");
+  const URL = import.meta.env.DEV ? 'http://localhost:3030/' : '/'
+  const socket = io(URL);
   socket.on("hello", (opts) => {
     myColor = opts.color;
   });
