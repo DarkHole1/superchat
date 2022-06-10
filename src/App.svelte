@@ -181,4 +181,8 @@
   .violet {
     color: #6e36ca;
   }
+
+  :global(body.darkmode) {
+    background-color: #2F3538;
+  }
 </style>
