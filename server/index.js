@@ -52,6 +52,9 @@ io.on('connection', (socket) => {
             socket.broadcast.emit('typing', {
                 id: msgId, color, text
             })
+            if(text == "") {
+                msgId = 0;
+            }
         }
     })
 });
